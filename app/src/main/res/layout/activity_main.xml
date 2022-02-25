@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/linearlayout_timer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:id="@+id/et_hours"
+            android:hint="Hours"
+            android:layout_marginLeft="10dp"
+            android:inputType="time"
+            android:drawableBottom="@color/purple_200"
+            />
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:id="@+id/et_minutes"
+            android:inputType="time"
+            android:hint="Minutes"
+            android:drawableBottom="@color/purple_200"
+            />
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:id="@+id/et_seconds"
+            android:inputType="time"
+            android:hint="Seconds"
+            android:drawableBottom="@color/purple_200"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.25"
+            android:id="@+id/btn_start"
+            android:text="Start!"
+            android:layout_marginRight="10dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_timers"
+        android:text="Running Timers:"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout_timer"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_timers"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/line_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
